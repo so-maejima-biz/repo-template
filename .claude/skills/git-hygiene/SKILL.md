@@ -3,14 +3,14 @@ name: git-hygiene
 description: Git運用ルール、.gitignore管理、秘密情報の防止、PR前チェック手順
 ---
 
-# Git Hygiene Skill
+# Git運用スキル
 
 ## .gitignore 管理方針
 
 ### 除外すべきもの
 - 仮想環境: `.venv/`, `venv/`, `node_modules/`
 - ビルド成果物: `dist/`, `build/`, `__pycache__/`
-- IDE設定: `.idea/` (ただし `.vscode/` は共有設定として残す場合あり)
+- IDE設定: `.idea/` （ただし `.vscode/` は共有設定として残す場合あり）
 - OS生成ファイル: `.DS_Store`, `Thumbs.db`
 - 秘密情報: `.env`, `*.pem`, `*.key`, `credentials.json`
 - 個人設定: `CLAUDE.local.md`
@@ -77,7 +77,7 @@ git diff --cached --name-only
 ## 禁止されたgit操作
 
 以下は明示的な許可なく実行しない：
-- `git push --force` (履歴破壊)
-- `git reset --hard` (変更消失)
-- `git clean -fd` (untracked削除)
+- `git push --force` （履歴破壊）
+- `git reset --hard` （変更消失）
+- `git clean -fd` （untracked削除）
 - `git rebase` on shared branches

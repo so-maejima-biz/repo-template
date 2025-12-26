@@ -1,43 +1,51 @@
-# CLAUDE.md - AI Development Guidelines
+# CLAUDE.md - AI開発ガイドライン
 
-## Core Principles
-- **No secrets in code**: API keys, passwords, tokens must use environment variables
-- **No destructive git operations**: Avoid `--force`, `reset --hard` without explicit approval
-- **Minimal changes**: Only modify what's necessary. Avoid over-engineering
-- **Confirm before commit**: Always review staged changes before committing
+## 基本原則
+- **秘密情報をコードに書かない**: APIキー、パスワード、トークンは環境変数で管理
+- **破壊的なgit操作を避ける**: `--force`, `reset --hard` は明示的な許可なく実行しない
+- **最小限の変更**: 必要な箇所のみ修正。過剰な設計をしない
+- **コミット前に確認**: ステージされた変更を必ずレビューしてからコミット
 
-## Python Projects (.venv)
-Before starting Python work, verify you're in the virtual environment:
+## コード編集の前に
+- 目的とスコープを明確にしてからファイルに触れる
+- 複数ファイルや破壊的な変更の場合は、計画を示して承認を待つ
+- 編集後は、何を変更したか要約する
+
+> 詳細な手順は `.claude/skills/code-edit-workflow/` を参照
+
+## Pythonプロジェクト (.venv)
+Python作業を開始する前に、仮想環境に入っているか確認:
 ```powershell
-where python              # Should show .venv path
-python -c "import sys; print(sys.prefix)"  # Should show .venv directory
+where python              # .venv のパスが表示されるはず
+python -c "import sys; print(sys.prefix)"  # .venv ディレクトリが表示されるはず
 ```
-If not activated, run: `.venv\Scripts\activate` (Windows)
+未アクティベートの場合: `.venv\Scripts\activate` (Windows)
 
-> For detailed Python setup and troubleshooting, see `.claude/skills/python-dev/`
+> 詳細なセットアップは `.claude/skills/python-dev/` を参照
 
-## Quick Commands
+## よく使うコマンド
 ```bash
 # Git
-git status                 # Check before any commit
-git diff --cached          # Review staged changes
+git status                 # コミット前に必ず確認
+git diff --cached          # ステージされた変更を確認
 
-# Python (after activating .venv)
+# Python (.venv アクティベート後)
 pip install -r requirements.txt
-python -m pytest           # Run tests
+python -m pytest           # テスト実行
 ```
 
-## Before PR Checklist
-- [ ] No hardcoded secrets or credentials
-- [ ] `.gitignore` covers sensitive files
-- [ ] Tests pass (if applicable)
-- [ ] Code follows project conventions
+## PR前チェックリスト
+- [ ] ハードコードされた秘密情報がないか
+- [ ] `.gitignore` で機密ファイルが除外されているか
+- [ ] テストが通るか（該当する場合）
+- [ ] プロジェクトの規約に沿っているか
 
-## Project Skills
-Detailed procedures are in `.claude/skills/`:
-- `git-hygiene/` - Git operations, .gitignore, secret prevention
-- `python-dev/` - Virtual environment, testing, formatting
-- `security-basics/` - Credential handling, minimal permissions
+## プロジェクトスキル
+詳細な手順は `.claude/skills/` にあります:
+- `code-edit-workflow/` - コード編集の手順と確認フロー
+- `git-hygiene/` - Git運用、.gitignore、秘密情報の防止
+- `python-dev/` - 仮想環境、テスト、フォーマット
+- `security-basics/` - 認証情報の取り扱い、最小権限
 
-## Personal Notes
-Use `CLAUDE.local.md` for machine-specific settings (git-ignored).
+## 個人用メモ
+端末固有の設定は `CLAUDE.local.md` に記載（git管理外）。

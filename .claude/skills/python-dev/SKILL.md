@@ -3,7 +3,7 @@ name: python-dev
 description: Python開発環境（.venv）のセットアップ、実行、テスト、フォーマット手順。Windows環境での注意点を含む
 ---
 
-# Python Development Skill
+# Python開発スキル
 
 ## 仮想環境 (.venv)
 
@@ -18,7 +18,7 @@ python -m venv .venv
 # Windows PowerShell
 .venv\Scripts\Activate.ps1
 
-# Windows Command Prompt
+# Windows コマンドプロンプト
 .venv\Scripts\activate.bat
 
 # Git Bash on Windows
@@ -36,7 +36,7 @@ python -c "import sys; print(sys.prefix)"
 # 期待: C:\...\project\.venv
 ```
 
-## Windows での Troubleshooting
+## Windows でのトラブルシューティング
 
 ### ExecutionPolicy エラー
 PowerShell で `.ps1` スクリプトが実行できない場合：
@@ -96,15 +96,15 @@ python -m unittest discover
 ## コードフォーマット
 
 ```bash
-# Black (フォーマッタ)
+# Black（フォーマッタ）
 pip install black
 black .
 
-# isort (import整理)
+# isort（import整理）
 pip install isort
 isort .
 
-# flake8 (リンター)
+# flake8（リンター）
 pip install flake8
 flake8 .
 ```

@@ -3,7 +3,7 @@ name: security-basics
 description: 機密情報の取り扱い、認証情報管理、最小権限の原則、依存関係のセキュリティ
 ---
 
-# Security Basics Skill
+# セキュリティ基礎スキル
 
 ## 機密情報の取り扱い
 
@@ -26,16 +26,16 @@ if not api_key:
     raise ValueError("API_KEY environment variable is required")
 
 # Bad
-api_key = "sk-1234567890abcdef"  # Never do this
+api_key = "sk-1234567890abcdef"  # 絶対にしない
 ```
 
 #### .env ファイル（ローカル開発用）
 ```bash
-# .env (git管理外)
+# .env（git管理外）
 API_KEY=your-actual-key
 DATABASE_URL=postgres://user:pass@localhost/db
 
-# .env.example (git管理対象、値はダミー)
+# .env.example（git管理対象、値はダミー）
 API_KEY=your-api-key-here
 DATABASE_URL=postgres://user:pass@host/db
 ```
@@ -63,7 +63,7 @@ logger.debug(f"Using API key: {api_key[:4]}****")
 
 ## 最小権限の原則
 
-### API キーのスコープ
+### APIキーのスコープ
 - 必要な権限のみを持つキーを作成
 - 読み取り専用で済むなら書き込み権限は不要
 - 本番/開発で別のキーを使用
@@ -103,7 +103,7 @@ requests>=2.0  # 避ける
 ```
 
 ### 信頼できるソースのみ
-- 公式パッケージリポジトリ (PyPI, npm) を使用
+- 公式パッケージリポジトリ（PyPI, npm）を使用
 - プライベートリポジトリは明示的に設定
 
 ## チェックリスト
