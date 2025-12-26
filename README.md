@@ -22,22 +22,17 @@ pip install -r requirements.txt  # あれば
 
 ## 構成
 
+現在の構成を確認:
+```bash
+tree -I "node_modules|.venv|__pycache__|.git"
 ```
-.
-├── CLAUDE.md              # AI開発ガイドライン（必読）
-├── CLAUDE.local.md        # 個人用メモ（git管理外）
-├── .gitignore
-├── .editorconfig
-├── .vscode/
-│   ├── extensions.json    # 推奨拡張
-│   └── settings.json
-└── .claude/
-    └── skills/            # 詳細手順書
-        ├── code-edit-workflow/
-        ├── git-hygiene/
-        ├── python-dev/
-        └── security-basics/
-```
+
+### 主要ファイル
+| ファイル | 役割 |
+|----------|------|
+| `CLAUDE.md` | AI開発ガイドライン（必読） |
+| `CLAUDE.local.md` | 個人用メモ（git管理外） |
+| `.claude/skills/` | 詳細手順書 |
 
 ## Claude Code利用者向け
 

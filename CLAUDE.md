@@ -41,11 +41,13 @@ python -m pytest           # テスト実行
 - [ ] プロジェクトの規約に沿っているか
 
 ## プロジェクトスキル
-詳細な手順は `.claude/skills/` にあります:
-- `code-edit-workflow/` - コード編集の手順と確認フロー
-- `git-hygiene/` - Git運用、.gitignore、秘密情報の防止
-- `python-dev/` - 仮想環境、テスト、フォーマット
-- `security-basics/` - 認証情報の取り扱い、最小権限
+詳細な手順は `.claude/skills/` にあります。
+現在のスキル一覧は `ls .claude/skills/` で確認。
+
+## ドキュメント更新トリガー
+以下の場合、このファイルまたはREADME.mdの更新を検討:
+- `.claude/skills/` にスキルを追加/削除したとき
+- プロジェクトの基本ルールが変わったとき
 
 ## 個人用メモ
 端末固有の設定は `CLAUDE.local.md` に記載（git管理外）。
